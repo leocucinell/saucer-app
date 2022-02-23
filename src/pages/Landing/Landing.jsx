@@ -1,14 +1,13 @@
 import './Landing.css'
-import { Link } from 'react-router-dom';
+
+import FormContainer from '../../components/FormContainer/FormContainer';
 
 const Landing = () => {
     return(
         <div className="Landing-page">
-            <h1>Landing page</h1>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Sign up</Link>
+            <FormContainer message="welcome"/>
         </div>
     );
 }
 
-export default Landing
+export default Landing;

@@ -1,3 +1,14 @@
 .App {
-  
+
+}
+
+.content-view{
+    height: 90vh;
+    width: 100vw;
+}
+
+.Logo {
+    font-family: 'Kodchasan', sans-serif;
+    color: white;
+    font-weight: bold
 }

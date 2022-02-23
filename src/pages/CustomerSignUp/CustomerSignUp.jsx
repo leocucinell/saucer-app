@@ -1,3 +1,5 @@
+import './CustomerSignUp.css'
+
 const CustomerSignUp = () => {
     return(
         <div className="CustomerSignUp-page">

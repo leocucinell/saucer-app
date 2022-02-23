@@ -1,3 +1,5 @@
+import './CustomerLogin.css'
+
 const CustomerLogin = () => {
     return(
         <div className="CustomerLogin-page">
@@ -6,4 +8,4 @@ const CustomerLogin = () => {
     )
 }
 
-export default CustomerLogin
+export default CustomerLogin;
