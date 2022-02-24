@@ -1,16 +1,19 @@
-.customer-signup-form-container{
+.customer-login-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 689px;
-    height: 700px;
+    height: 500px;
     background: linear-gradient(179.95deg, rgba(255, 255, 255, 0) 0.04%, #5CDE50 159.38%);
     border: 1px solid #000000;
     box-sizing: border-box;
     border-radius: 10px;
     padding-left: 50px;
-    padding-right: 50px; 
+    padding-right: 50px;
     filter: drop-shadow(6px 6px 9px rgba(0, 0, 0, 0.39));
 }
 
-.customer-signup-form{
+.customer-login-form {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -19,7 +22,7 @@
     align-items: center;
 }
 
-.signup-input{
+.login-input {
     height: 70px;
     width: 100%;
     background: #FFFFFF;

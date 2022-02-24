@@ -25,7 +25,7 @@ const CustomerSignupForm = () => {
                 break;
             case 'confirm':
                 setConfirmPassword(e.target.value);
-                break
+                break;
             default:
                 console.log('No Such Case...')
         }

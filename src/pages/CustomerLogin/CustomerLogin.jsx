@@ -1,9 +1,12 @@
 import './CustomerLogin.css'
 
+import CustomerLoginForm from '../../components/CustomerLoginForm/CustomerLoginForm';
+
 const CustomerLogin = () => {
     return(
         <div className="CustomerLogin-page">
-            <h1>CustomerLogin</h1>
+            <span>Log in</span>
+            <CustomerLoginForm />
         </div>
     )
 }
