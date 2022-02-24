@@ -7,6 +7,9 @@
     flex-direction: column;
     justify-content: space-evenly;
 }
+.menu-box:hover{
+    cursor: pointer;
+}
 
 .hamburger-bar{
     width: 50px;

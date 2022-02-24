@@ -1,9 +1,9 @@
 import './HamburgerMenu.css'
 
-const HamburgerMenu = () => {
+const HamburgerMenu = ({menuStatus, setMenuStatus}) => {
 
     const handleClick = () => {
-        console.log('CLICKED ME!')
+        setMenuStatus(!menuStatus);
     }
 
     return (
