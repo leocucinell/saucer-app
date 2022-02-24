@@ -1,9 +1,14 @@
 import './HamburgerMenu.css'
+import { useDispatch } from 'react-redux';
+import { changeVisibility } from '../../features/menuPopupSlice';
 
-const HamburgerMenu = ({menuStatus, setMenuStatus}) => {
+
+const HamburgerMenu = () => {
+
+    const dispatch = useDispatch();
 
     const handleClick = () => {
-        setMenuStatus(!menuStatus);
+        dispatch(changeVisibility())
     }
 
     return (

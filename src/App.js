@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
+import SidebarMenu from './components/SidebarMenu/SidebarMenu';
 import NavBar from './components/NavBar/NavBar';
 import Landing from './pages/Landing/Landing';
 import CustomerLogin from './pages/CustomerLogin/CustomerLogin';
@@ -9,10 +11,14 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import './App.css';
 
 function App() {
+
+  const menuToggle = useSelector((state) => state.menuPopup.value)
+
   return (
     <BrowserRouter>
       <NavBar />
       <div className="content-view">
+        {menuToggle ? <SidebarMenu /> : null}
         <Routes>
           <Route path="/" element={<Landing/>} />
           <Route path="/login" element={<CustomerLogin/>} />
