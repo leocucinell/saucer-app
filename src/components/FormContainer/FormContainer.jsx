@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const FormContainer = ({message}) => {
     return(
         <div className="form-container-box">
-            <span>{message}</span>
+            <span id="welcome-message">{message}</span>
             <div className="landing-buttons-container">
-                <Link to='/login'><button>Log in</button></Link>
-                <Link to='/signup'><button>Sign up</button></Link>
+                <Link className="landing-button" to='/login'><span>Log in</span></Link>
+                <Link className="landing-button" to='/signup'>Sign up</Link>
             </div>
         </div>
     )
