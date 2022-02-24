@@ -31,6 +31,11 @@ const CustomerSignupForm = () => {
         }
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log('SEND IN USER INFORMATION TO API')
+    }
+
     return(
         <div className="customer-signup-form-container">
             <form className='customer-signup-form'>
@@ -40,6 +45,7 @@ const CustomerSignupForm = () => {
                     type="text" 
                     placeholder="username" 
                     name="username" 
+                    className="signup-input"
                 /> 
                 <input 
                     onChange={(e) => handleChanges(e, 'email')} 
@@ -47,6 +53,7 @@ const CustomerSignupForm = () => {
                     type="text" 
                     placeholder="email" 
                     name="email" 
+                    className="signup-input"
                 /> 
                 <input 
                     onChange={(e) => handleChanges(e, 'phone')} 
@@ -54,6 +61,7 @@ const CustomerSignupForm = () => {
                     type="text" 
                     placeholder="phone number" 
                     name="phone" 
+                    className="signup-input"
                 /> 
                 <input 
                     onChange={(e) => handleChanges(e, 'password')} 
@@ -61,6 +69,7 @@ const CustomerSignupForm = () => {
                     type="text" 
                     placeholder="password" 
                     name="password" 
+                    className="signup-input"
                 /> 
                 <input 
                     onChange={(e) => handleChanges(e, 'confirm')} 
@@ -68,8 +77,9 @@ const CustomerSignupForm = () => {
                     type="text" 
                     placeholder="confirm password" 
                     name="confirmPassword" 
+                    className="signup-input"
                 />
-                <button>Sign up</button>
+                <button onClick={(e) => handleSubmit(e)} className="landing-button">Sign up</button>
             </form>
         </div>
     );

@@ -5,6 +5,7 @@ import CustomerSignupForm from '../../components/CustomerSignupForm/CustomerSign
 const CustomerSignUp = () => {
     return(
         <div className="CustomerSignUp-page">
+            <span>Sign Up</span>
             <CustomerSignupForm />
         </div>
     );
