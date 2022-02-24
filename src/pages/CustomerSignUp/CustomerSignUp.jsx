@@ -1,11 +1,13 @@
 import './CustomerSignUp.css'
 
+import CustomerSignupForm from '../../components/CustomerSignupForm/CustomerSignupForm';
+
 const CustomerSignUp = () => {
     return(
         <div className="CustomerSignUp-page">
-            <h1>CustomerSignUp page</h1>
+            <CustomerSignupForm />
         </div>
     );
 }
 
-export default CustomerSignUp
+export default CustomerSignUp;
