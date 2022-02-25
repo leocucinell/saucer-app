@@ -1,7 +1,15 @@
 import './CustomerLoginForm.css'
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setCurrentUser } from '../../features/currentUserSlice';
+import { useNavigate } from 'react-router';
+
+import api from '../../api/api';
 
 const CustomerLoginForm = () => {
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -16,6 +24,21 @@ const CustomerLoginForm = () => {
                 break;
             default:
                 console.log('Unreachable case');
+        }
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try{
+            const loggedInUser = await api.post('auth/login', {
+                username,
+                password
+            });
+            const data = loggedInUser.data
+            dispatch(setCurrentUser(data));
+            navigate('/customerHome');
+        } catch {
+            console.log('ERROR LOGGING USRE IN, Please try again');
         }
     }
 
@@ -38,7 +61,10 @@ const CustomerLoginForm = () => {
                     value={password}
                     onChange={(e) => handleChanges(e, "password")}
                 />
-                <button className="landing-button">Log in</button>
+                <button 
+                onClick={handleSubmit}
+                className="landing-button"
+                >Log in</button>
             </form>
         </div>
     );
