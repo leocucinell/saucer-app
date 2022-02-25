@@ -1,7 +1,16 @@
 import './SidebarMenu.css';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { changeVisibility } from '../../features/menuPopupSlice';
 
 const SidebarMenu = () => {
+
+    const dispatch = useDispatch();
+
+    const handleClick = () => {
+        dispatch(changeVisibility());
+    }
+
     return(
         <div className="menu-screen-container">
             <div className="gray-background">
@@ -10,7 +19,7 @@ const SidebarMenu = () => {
                 <ul className="menu-list">
                     <li>Create Restuarant</li>
                     <hr />
-                    <li><Link className="menu-list-link" to="/about">about</Link></li>
+                    <li><Link onClick={handleClick} className="menu-list-link" to="/about">about</Link></li>
                     <hr />
                 </ul>
             </div>

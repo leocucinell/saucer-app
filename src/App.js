@@ -7,6 +7,7 @@ import Landing from './pages/Landing/Landing';
 import CustomerLogin from './pages/CustomerLogin/CustomerLogin';
 import CustomerSignUp from './pages/CustomerSignUp/CustomerSignUp';
 import AboutPage from './pages/AboutPage/AboutPage';
+import CustomerHome from './pages/CustomerHome/CustomerHome';
 
 import './App.css';
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/login" element={<CustomerLogin/>} />
           <Route path="/signup" element={<CustomerSignUp/>} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/customerHome" element={<CustomerHome />} /> {/* NOTE: Maybe add customer id in URL? */}
         </Routes>
       </div>
     </BrowserRouter>

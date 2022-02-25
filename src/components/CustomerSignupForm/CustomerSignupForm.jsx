@@ -1,7 +1,12 @@
 import './CustomerSignupForm.css'
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+
+import api from '../../api/api';
 
 const CustomerSignupForm = () => {
+
+    let navigate = useNavigate();
 
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -31,9 +36,22 @@ const CustomerSignupForm = () => {
         }
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => { 
         e.preventDefault()
-        console.log('SEND IN USER INFORMATION TO API')
+        if(password !== confirmPassword){
+            console.log('Password does not equal confirm password')
+            return
+        } else {
+            const createUserResponse = await api.post('user/new', {
+                username: username,
+                email: email,
+                phoneNumber: phone,
+                password: password
+            });
+            console.log(createUserResponse);
+            //redirect the user to the login page
+            navigate('/login');
+        }
     }
 
     return(
