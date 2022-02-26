@@ -18,9 +18,6 @@ const citiesSlice = createSlice({
     initialState: {value: []},
     reducers: {},
     extraReducers: {
-        [getCities.pending]: (state, action) => {
-            console.log('loading...')
-        },
         [getCities.fulfilled]: (state, action) => {
             state.value = action.payload
         }

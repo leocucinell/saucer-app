@@ -4,6 +4,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import menuPopupSlice from "../features/menuPopupSlice";
 import currentUserSlice from "../features/currentUserSlice";
 import citiesSlice from '../features/citiesSlice';
+import userSelectedCity from "../features/userSelectedCity";
 
 //Create Store
 const store = configureStore({
@@ -11,7 +12,8 @@ const store = configureStore({
         //pieces of state associated with slices go here
         menuPopup: menuPopupSlice,
         currentUser: currentUserSlice,
-        cities: citiesSlice
+        cities: citiesSlice,
+        userSelectedCity: userSelectedCity
     }
 });
 
