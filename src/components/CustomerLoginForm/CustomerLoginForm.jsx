@@ -34,8 +34,12 @@ const CustomerLoginForm = () => {
                 username,
                 password
             });
+            console.log('~ LOGGED IN USER ~')
+            console.log(loggedInUser)
+            console.log('~~~~~~~~~~~~~~~~~~')
             const data = loggedInUser.data
             dispatch(setCurrentUser(data));
+            //add the current user to local storage
             navigate('/customerHome');
         } catch {
             console.log('ERROR LOGGING USRE IN, Please try again');
