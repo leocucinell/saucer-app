@@ -40,6 +40,7 @@ const CustomerLoginForm = () => {
             const data = loggedInUser.data
             dispatch(setCurrentUser(data));
             //add the current user to local storage
+            localStorage.setItem('SaucerCurrentUser', JSON.stringify(data));
             navigate('/customerHome');
         } catch {
             console.log('ERROR LOGGING USRE IN, Please try again');
@@ -66,8 +67,8 @@ const CustomerLoginForm = () => {
                     onChange={(e) => handleChanges(e, "password")}
                 />
                 <button 
-                onClick={handleSubmit}
-                className="landing-button"
+                    onClick={handleSubmit}
+                    className="landing-button"
                 >Log in</button>
             </form>
         </div>
