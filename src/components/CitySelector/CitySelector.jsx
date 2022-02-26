@@ -12,7 +12,6 @@ const CitySelector = () => {
     //NOTE: Might have to change to include name later
     const handleChange = (e) => {
         setSelectedCity(e.target.value);
-        console.log(selectedCity)
         dispatch(changeCity(parseInt(e.target.value)));
     }
 
