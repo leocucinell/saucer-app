@@ -25,7 +25,7 @@ const RestuarantList = () => {
         <div>
             {restuarantList.map((restuarant) => {
                 return(
-                    <p>{restuarant.title}</p>
+                    <p key={restuarant.id}>{restuarant.title}</p>
                 );
             })}
         </div>
