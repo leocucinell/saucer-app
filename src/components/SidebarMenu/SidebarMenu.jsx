@@ -21,6 +21,7 @@ const SidebarMenu = () => {
                     <hr />
                     <li><Link onClick={handleClick} className="menu-list-link" to="/about">about</Link></li>
                     <hr />
+                    <li><Link onClick={handleClick} className="menu-list-link" to='/userAccount'>My Account</Link></li>
                 </ul>
             </div>
         </div>

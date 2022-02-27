@@ -1,4 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import api from "../api/api";
+
+export const validateAndSetCurrentUser = createAsyncThunk(
+    'validate/user',
+    async(action) => {
+        const refreshToken = action.refreshToken;
+        const validateRefresh = await api.post(`auth/validateRefresh?refreshToken=${refreshToken}`);
+        const newUserData = validateRefresh.data.data;
+        return newUserData;
+    }
+)
 
 const currentUserSlice = createSlice({
     name: 'currentUser',
@@ -11,6 +22,14 @@ const currentUserSlice = createSlice({
             state = {
                 value: null
             }
+        }
+    },
+    extraReducers: {
+        [validateAndSetCurrentUser.fulfilled]: (state, action) => {
+            state.value = action.payload;
+        },
+        [validateAndSetCurrentUser.rejected]: () => {
+            console.log('Too long since last login. Please login again');
         }
     }
 });
