@@ -3,13 +3,14 @@ import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import api from '../../api/api';
 
+import ReservationCard from '../ReservationCard/ReservationCard';
+
 const ReservationList = () => {
 
     const currentUser = useSelector((state) => state.currentUser.value);
     const [reservationsList, setReservationsList] = useState([]);
-    const [reservationRestuarantItems, setReservationRestuarantItems] = useState({});
-
     //runs when the current user is loaded into redux state
+    console.log(reservationsList);
     useEffect(() => {
         if(currentUser === null){
             return;
@@ -26,18 +27,19 @@ const ReservationList = () => {
         })
     }, [currentUser]);
 
-    //runs when the reservationsList is updated
-    useEffect(() => {
-        //retrieve the restuarant data
-        for (let i = 0; i < reservationsList.length; i++){
-            //retrieve the restuarant with that id
-            
-        }
-    }, [reservationsList])
 
     return(
-        <p>Reservation list by id</p>
+        <div className="reservation-list">
+            {
+                reservationsList.length ?
+                reservationsList.map(({id, title, description}) => {
+                    return <ReservationCard id={id} title={title} description={description} />
+                })
+                :
+                <p>Loading...</p>
+            }
+        </div>
     );
 }
 
-export default ReservationList
+export default ReservationList;
