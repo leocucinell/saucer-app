@@ -8,6 +8,7 @@ import CustomerLogin from './pages/CustomerLogin/CustomerLogin';
 import CustomerSignUp from './pages/CustomerSignUp/CustomerSignUp';
 import AboutPage from './pages/AboutPage/AboutPage';
 import CustomerHome from './pages/CustomerHome/CustomerHome';
+import UserAccount from './pages/UserAccount/UserAccount';
 
 import './App.css';
 
@@ -25,7 +26,8 @@ function App() {
           <Route path="/login" element={<CustomerLogin/>} />
           <Route path="/signup" element={<CustomerSignUp/>} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/customerHome" element={<CustomerHome />} /> {/* NOTE: Maybe add customer id in URL? */}
+          <Route path="/customerHome" element={<CustomerHome />} />
+          <Route path="/userAccount" element={<UserAccount />} />
         </Routes>
       </div>
     </BrowserRouter>

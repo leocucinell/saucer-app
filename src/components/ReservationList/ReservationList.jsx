@@ -10,7 +10,6 @@ const ReservationList = () => {
     const currentUser = useSelector((state) => state.currentUser.value);
     const [reservationsList, setReservationsList] = useState([]);
     //runs when the current user is loaded into redux state
-    console.log(reservationsList);
     useEffect(() => {
         if(currentUser === null){
             return;
@@ -33,7 +32,7 @@ const ReservationList = () => {
             {
                 reservationsList.length ?
                 reservationsList.map(({id, title, description}) => {
-                    return <ReservationCard id={id} title={title} description={description} />
+                    return <ReservationCard key={id} id={id} title={title} description={description} />
                 })
                 :
                 <p>Loading...</p>
