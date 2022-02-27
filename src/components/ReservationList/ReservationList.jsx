@@ -1,7 +1,7 @@
 import './ReservationList.css'
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
-import api from '../../api/api';
+import { getUserReservations } from '../../api/getUserReservationsList';
 
 import ReservationCard from '../ReservationCard/ReservationCard';
 
@@ -9,22 +9,17 @@ const ReservationList = () => {
 
     const currentUser = useSelector((state) => state.currentUser.value);
     const [reservationsList, setReservationsList] = useState([]);
-    //runs when the current user is loaded into redux state
-    // useEffect(() => {
-    //     if(currentUser === null){
-    //         return;
-    //     }
-    //     api.get(
-    //         'reservation/user_list',
-    //         {
-    //             params: {
-    //                 id: currentUser.userData.id
-    //             }
-    //         }
-    //     ).then((result) => {
-    //         setReservationsList(result.data.data.reservations);
-    //     })
-    // }, [currentUser]);
+
+    useEffect(() => {
+        if(currentUser == null){
+            return;
+        }
+        getUserReservations(currentUser.id).then((res) => {
+            const reservations = res.data.data.reservations;
+            setReservationsList(reservations);
+        });
+        
+    }, [currentUser])
 
 
     return(
