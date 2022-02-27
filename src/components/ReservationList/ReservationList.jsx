@@ -10,21 +10,21 @@ const ReservationList = () => {
     const currentUser = useSelector((state) => state.currentUser.value);
     const [reservationsList, setReservationsList] = useState([]);
     //runs when the current user is loaded into redux state
-    useEffect(() => {
-        if(currentUser === null){
-            return;
-        }
-        api.get(
-            'reservation/user_list',
-            {
-                params: {
-                    id: currentUser.userData.id
-                }
-            }
-        ).then((result) => {
-            setReservationsList(result.data.data.reservations);
-        })
-    }, [currentUser]);
+    // useEffect(() => {
+    //     if(currentUser === null){
+    //         return;
+    //     }
+    //     api.get(
+    //         'reservation/user_list',
+    //         {
+    //             params: {
+    //                 id: currentUser.userData.id
+    //             }
+    //         }
+    //     ).then((result) => {
+    //         setReservationsList(result.data.data.reservations);
+    //     })
+    // }, [currentUser]);
 
 
     return(
