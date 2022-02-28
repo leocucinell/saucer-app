@@ -19,7 +19,7 @@ const ReservationList = () => {
             setReservationsList(reservations);
         });
         
-    }, [currentUser])
+    }, [currentUser]);
 
 
     return(
