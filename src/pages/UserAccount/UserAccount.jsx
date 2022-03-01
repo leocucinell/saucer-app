@@ -44,6 +44,7 @@ const UserAccount = () => {
         }
     }
 
+    //TODO: The below methods
     const handleLogout = () => {
         //make api call to remove the refreshToken in backend,
         //remove the current user from local storage

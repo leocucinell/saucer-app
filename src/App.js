@@ -9,6 +9,7 @@ import CustomerSignUp from './pages/CustomerSignUp/CustomerSignUp';
 import AboutPage from './pages/AboutPage/AboutPage';
 import CustomerHome from './pages/CustomerHome/CustomerHome';
 import UserAccount from './pages/UserAccount/UserAccount';
+import RestuarantDetail from './pages/RestuarantDetail/RestuarantDetail';
 
 import './App.css';
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/customerHome" element={<CustomerHome />} />
           <Route path="/userAccount" element={<UserAccount />} />
+          <Route path="/restuarantDetail/:restuarantId" element={<RestuarantDetail />} />
         </Routes>
       </div>
     </BrowserRouter>

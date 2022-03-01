@@ -16,7 +16,7 @@ const CitySelector = () => {
     }
 
     return(
-        <select name="cities" value={selectedCity} onChange={(e) => handleChange(e)} >
+        <select className="city-selector" name="cities" value={selectedCity} onChange={(e) => handleChange(e)} >
             {cities.map((city) => {
                 return(
                     <option key={city.id} value={city.id}>{city.name}</option>

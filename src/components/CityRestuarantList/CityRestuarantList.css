@@ -1,0 +1,9 @@
+.city-restuarant-list-container {
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 1.3rem;
+}
+
+.city-list-title-container{
+    display: flex;
+    flex-direction: row;
+}

@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import api from '../../api/api';
 
+import RestuarantCard from '../RestuarantCard/RestuarantCard';
+
 const RestuarantList = () => {
 
     const selectedCity = useSelector((state) => state.userSelectedCity.value); //{id: <int>}
@@ -24,8 +26,9 @@ const RestuarantList = () => {
     return(
         <div>
             {restuarantList.map((restuarant) => {
+                console.log(restuarant);
                 return(
-                    <p key={restuarant.id}>{restuarant.title}</p>
+                    <RestuarantCard key={restuarant.id} restuarant={restuarant} />
                 );
             })}
         </div>

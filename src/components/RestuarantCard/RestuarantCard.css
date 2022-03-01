@@ -1,0 +1,17 @@
+#RestuarantDetail-link{
+    text-decoration: none;
+    color: #000000;
+}
+
+.RestuarantCard-container{
+    display: flex;
+    flex-direction: row;
+}
+
+#RestuarantCard-title{
+    margin-bottom: 2px;
+}
+
+#RestuarantCard-description{
+    margin-top: 0px;
+}

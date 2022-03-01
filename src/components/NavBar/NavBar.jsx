@@ -4,10 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { validateAndSetCurrentUser } from '../../features/currentUserSlice';
 
 import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
+import BackButton from '../BackButton/BackButton';
 
 const NavBar = () => {
 
     const dispatch = useDispatch();
+    const currentUser = useSelector((state) => state.currentUser.value);
+    const pathname = window.location.pathname
+
     //const currentUser = useSelector((state) => state.currentUser.value);
     
     //check if a user is inside local storage
@@ -20,7 +24,12 @@ const NavBar = () => {
     return(
         <nav className="navbar-container">
             <ul className="navbar-ul">
-                <HamburgerMenu />
+                {
+                    pathname === '/customerHome' ?
+                    <HamburgerMenu />
+                    :
+                    <BackButton />
+                }
                 <span id='nav-logo' className="Logo">Saucer</span>
             </ul>
         </nav>
