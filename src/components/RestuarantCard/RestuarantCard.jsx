@@ -12,6 +12,7 @@ const RestuarantCard = ({ restuarant }) => {
                 </div>
             
             </div>
+            <hr />
         </Link>
     );
 }
