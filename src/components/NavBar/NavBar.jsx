@@ -10,9 +10,7 @@ const NavBar = () => {
 
     const dispatch = useDispatch();
     const currentUser = useSelector((state) => state.currentUser.value);
-    const pathname = window.location.pathname
-
-    //const currentUser = useSelector((state) => state.currentUser.value);
+    const pathname = window.location.pathname;
     
     //check if a user is inside local storage
     useEffect(() => {

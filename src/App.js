@@ -10,6 +10,7 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import CustomerHome from './pages/CustomerHome/CustomerHome';
 import UserAccount from './pages/UserAccount/UserAccount';
 import RestuarantDetail from './pages/RestuarantDetail/RestuarantDetail';
+import ReservationsDetail from './pages/ReservationsDetail/ReservationsDetail';
 
 import './App.css';
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/customerHome" element={<CustomerHome />} />
           <Route path="/userAccount" element={<UserAccount />} />
           <Route path="/restuarantDetail/:restuarantId" element={<RestuarantDetail />} />
+          <Route path="/reservationDetail/:restuarantId" element={<ReservationsDetail />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -3,6 +3,10 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { getRestuarant } from '../../api/getRestuarant';
 
+import RestuarantDetailBanner from '../../components/RestuarantDetailBanner/RestuarantDetailBanner';
+import RestuarantInfoContainer from '../../components/RestuarantInfoContainer/RestuarantInfoContainer';
+import RestuarantButtonsContainer from '../../components/RestuarantButtonsContainer/RestuarantButtonsContainer';
+
 const RestuarantDetail = () => {
     let params = useParams()
     const [restuarant, setRestuarant] = useState({})
@@ -16,17 +20,9 @@ const RestuarantDetail = () => {
 
     return(
         <div className="RestuarantDetail-container">
-            <div className="RestuarantDetail-banner-container">
-                <h1>BANNER</h1>
-            </div>
-
-            <div className="RestuarantDetail-info-container">
-                <h2>{restuarant.title}</h2>
-            </div>
-
-            <div className="RestuarantDetail-buttons-container">
-
-            </div>
+            <RestuarantDetailBanner bannerUrl={restuarant.bannerUrl} title={restuarant.title} />
+            <RestuarantInfoContainer restuarant={restuarant} />
+            <RestuarantButtonsContainer menuUrl={restuarant.menuUrl} restuarantId={restuarant.id} />
         </div>
     )
 }

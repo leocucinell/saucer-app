@@ -1,0 +1,24 @@
+.RestuarantDetail-banner-container{
+    width: 100%;
+}
+
+.RestuarantDetail-banner-container > img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.RestuarantDetail-banner-container > h1 {
+    position: absolute;
+    color: #FFFFFF;
+    z-index: 12;
+    top: 330px;
+}
+
+.black-curtian{
+    width: 100%;
+    height: 350px;
+    position: absolute;
+    z-index: 10;
+    background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #000000 100%);
+}
