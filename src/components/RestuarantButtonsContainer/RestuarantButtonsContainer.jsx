@@ -5,7 +5,7 @@ const RestuarantButtonsContainer = ({menuUrl, restuarantId}) => {
     return(
         <div className="RestuarantDetail-buttons-container">
             <a href={menuUrl}>View Menu</a>
-            <Link to={`/reservationDetail/${restuarantId}`} >Reservations</Link>
+            <Link to={`/reservationDetail/${restuarantId}`} >Add Reservation</Link>
         </div>
     );
 }

@@ -1,9 +1,9 @@
 import "./ReservationDetailsButtons.css";
 
-const ReservationDetailsButtons = () => {
+const ReservationDetailsButtons = ({ handleSubmit }) => {
     return(
         <div className='reservationDetail-buttons-container'>
-            <button>Add Reservation</button>
+            <button onClick={handleSubmit}>Add Reservation</button>
         </div>
     );
 }
