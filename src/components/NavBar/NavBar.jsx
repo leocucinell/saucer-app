@@ -16,18 +16,14 @@ const NavBar = () => {
     useEffect(() => {
         const savedUser = localStorage.getItem('SaucerCurrentUser');
         const parsedUser = JSON.parse(savedUser);
+        console.log(parsedUser)
         dispatch(validateAndSetCurrentUser(parsedUser));
     }, [dispatch]);
 
     return(
         <nav className="navbar-container">
             <ul className="navbar-ul">
-                {
-                    pathname === '/customerHome' ?
-                    <HamburgerMenu />
-                    :
-                    <BackButton />
-                }
+                <HamburgerMenu />
                 <span id='nav-logo' className="Logo">Saucer</span>
             </ul>
         </nav>

@@ -4,9 +4,11 @@ import api from "../api/api";
 export const validateAndSetCurrentUser = createAsyncThunk(
     'validate/user',
     async(action) => {
+        console.log("VALIDATING USER")
         const refreshToken = action.refreshToken;
         const validateRefresh = await api.post(`auth/validateRefresh?refreshToken=${refreshToken}&id=${action.userData.id}`);
         const newUserData = validateRefresh.data.data;
+        console.log(newUserData)
         return newUserData;
     }
 )
@@ -16,12 +18,15 @@ const currentUserSlice = createSlice({
     initialState: {value: null},
     reducers: {
         setCurrentUser: (state, action) => {
+            console.log('~~ setCurrentUser Action/Reducer ~~');
+            console.log(action);
             state.value = action.payload
         },
         removeCurrentUser: (state, action) => {
             state = {
                 value: null
             }
+            console.log('Current user removed');
         }
     },
     extraReducers: {

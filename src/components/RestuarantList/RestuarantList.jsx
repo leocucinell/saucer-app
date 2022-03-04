@@ -26,7 +26,6 @@ const RestuarantList = () => {
     return(
         <div>
             {restuarantList.map((restuarant) => {
-                console.log(restuarant);
                 return(
                     <RestuarantCard key={restuarant.id} restuarant={restuarant} />
                 );

@@ -11,9 +11,7 @@ const ReservationList = () => {
     const [reservationsList, setReservationsList] = useState([]);
 
     useEffect(() => {
-        if(currentUser == null){
-            return;
-        }
+        if(currentUser == null)return;
         getUserReservations(currentUser.id).then((res) => {
             const reservations = res.data.data.reservations;
             setReservationsList(reservations);

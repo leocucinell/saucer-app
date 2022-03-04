@@ -10,7 +10,8 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import CustomerHome from './pages/CustomerHome/CustomerHome';
 import UserAccount from './pages/UserAccount/UserAccount';
 import RestuarantDetail from './pages/RestuarantDetail/RestuarantDetail';
-import ReservationsDetail from './pages/ReservationsDetail/ReservationsDetail';
+import ReservationsDetail from './pages/CreateReservationsDetail/CreateReservationsDetail';
+import LogoutSuccess from './pages/LogoutSuccess/LogoutSuccess';
 
 import './App.css';
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/userAccount" element={<UserAccount />} />
           <Route path="/restuarantDetail/:restuarantId" element={<RestuarantDetail />} />
           <Route path="/reservationDetail/:restuarantId" element={<ReservationsDetail />} />
+          <Route path="/LoggedOut" element={<LogoutSuccess />} />
         </Routes>
       </div>
     </BrowserRouter>

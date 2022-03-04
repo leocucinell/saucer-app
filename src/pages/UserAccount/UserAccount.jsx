@@ -1,11 +1,16 @@
 import './UserAccount.css';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
 import { updateUser } from '../../api/updateUser';
 import { setCurrentUser } from '../../features/currentUserSlice';
+import { removeCurrentUser } from '../../features/currentUserSlice';
+
+import api from '../../api/api';
 
 const UserAccount = () => {
 
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const currentUser = useSelector((state) => state.currentUser);
 
@@ -18,7 +23,7 @@ const UserAccount = () => {
         setUsername(currentUser.value.username);
         setEmail(currentUser.value.email);
         setphoneNumber(currentUser.value.phoneNumber);
-    }, [currentUser]);
+    }, []);
 
     const validateInputs = () => {
         if(username === "" || email === "" || phoneNumber === "") return false;
@@ -45,16 +50,36 @@ const UserAccount = () => {
     }
 
     //TODO: The below methods
-    const handleLogout = () => {
-        //make api call to remove the refreshToken in backend,
+    const handleLogout = async (e) => {
+        //call the logout_user function in the backend
         //remove the current user from local storage
         //navigate user back to the landing page
+        e.preventDefault()
+        try{
+            console.log(currentUser)
+            await api.post(
+                'auth/logout',
+                {
+                    username: username
+                }
+            ).then(() => {
+                dispatch(removeCurrentUser());
+                localStorage.removeItem('SaucerCurrentUser');
+            }).then(() => {
+                navigate('/');
+            })
+        } catch(err) {
+            console.log(err);
+            return err;
+        }
     }
 
-    const handleDelete = () => {
+    const handleDelete = (e) => {
         //make api call to delete the user from the db
         //remove the urrent user from local storage
         //navigate back to landing page
+        e.preventDefault()
+        console.log("DELETE ACCOUNT")
     }
 
     return(
@@ -66,9 +91,9 @@ const UserAccount = () => {
                     <input value={phoneNumber} onChange={(e) => setphoneNumber(e.target.value)} className='update-input' type="text" placeholder="phone number" />
                     <button onClick={(e) => handleUpdate(e)}>Confirm</button>
                     <hr />
-                    <button>Log out</button>
+                    <button onClick={(e) => handleLogout(e)}>Log out</button>
                     <hr />
-                    <button>Delete Account</button>
+                    <button onClick={(e) => handleDelete(e)}>Delete Account</button>
                 </form>
             </div>
         </div>

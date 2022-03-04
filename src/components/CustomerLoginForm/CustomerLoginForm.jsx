@@ -28,7 +28,7 @@ const CustomerLoginForm = () => {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
         try{
             const loggedInUser = await api.post('auth/login', {
                 username,

@@ -6,6 +6,12 @@
 .RestuarantCard-container{
     display: flex;
     flex-direction: row;
+    width: 45vw;
+}
+
+.RestuarantCard-container > img {
+    width: 100px;
+    height: 100px;
 }
 
 #RestuarantCard-title{
